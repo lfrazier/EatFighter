@@ -78,19 +78,31 @@ CGSize winSize;
     [ryuNode addChild:enemy z:5];
     
     // Enemy AI
-    //[self schedule:@selector(enemyPunch) interval:1 repeat:-1 delay:1];
+    // The more stars the restaurant has, the harder it is to beat
+    int stars = [(NSNumber *)[restaurant objectForKey:@"stars"] integerValue];
+    
+    // Complicated AI: come back to this
+    /*double randomOffset = (arc4random() % 100) / 100.0;
+    float interval = 6 - (stars + randomOffset);
+     */
+    
+    // Simple AI: Stars are inversely, linearly proportional to punching speed.
+    float interval = 6 - stars;
+    [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:5];
     
     [self addChild:ryuNode z:5];
 }
 
 - (void)setUpHealthBars {
+    
+    float healthBarHeight = winSize.height/1.2;
     ryuHealthBar = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"green_health_bar.png"]];
     ryuHealthBar.type = kCCProgressTimerTypeBar;
     [ryuHealthBar setScaleX:20];
     [ryuHealthBar setScaleY:10];
     ryuHealth = 100;
     ryuHealthBar.percentage = ryuHealth;
-    ryuHealthBar.position = ccp(winSize.width/5,winSize.height/1.1);
+    ryuHealthBar.position = ccp(winSize.width/5, healthBarHeight);
     [self addChild:ryuHealthBar z:10];
     
     enemyHealthBar = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"green_health_bar.png"]];
@@ -99,9 +111,19 @@ CGSize winSize;
     [enemyHealthBar setScaleY:10];
     enemyHealth = 100;
     enemyHealthBar.percentage = enemyHealth;
-    enemyHealthBar.position = ccp(winSize.width/1.25,winSize.height/1.1);
+    enemyHealthBar.position = ccp(winSize.width/1.25,healthBarHeight);
     [self addChild:enemyHealthBar z:10];
     
+    int labelOffset = 30;
+    CCLabelTTF *ryuLabel = [CCLabelTTF labelWithString:@"Hungry Ryu" fontName:@"Ginko" fontSize:30];
+    ryuLabel.position = ccp(winSize.width/5,healthBarHeight + labelOffset);
+    ryuLabel.color = ccWHITE;
+    [self addChild:ryuLabel z:10];
+    
+    CCLabelTTF *enemyLabel = [CCLabelTTF labelWithString:[restaurant objectForKey:@"name"] fontName:@"Ginko" fontSize:18];
+    enemyLabel.position = ccp(winSize.width/1.25,healthBarHeight + labelOffset);
+    enemyLabel.color = ccRED;
+    [self addChild:enemyLabel z:10];
 }
 
 - (void)ryuPunch {
@@ -142,10 +164,11 @@ CGSize winSize;
     [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"11.png"]];
     
     CCAnimation *punchAnim = [CCAnimation
-                              animationWithSpriteFrames:punchAnimFrames delay:0.1f];
+                              animationWithSpriteFrames:punchAnimFrames delay:0.2f];
     enemyPunchAction = [CCAnimate actionWithAnimation:punchAnim];
     [enemy runAction:enemyPunchAction];
-    [self scheduleOnce:@selector(checkForEnemyHit) delay:0.5];
+    [enemy runAction:enemyIdleAction];
+    [self scheduleOnce:@selector(checkForEnemyHit) delay:0.4];
 }
 
 - (void)checkForEnemyHit {
