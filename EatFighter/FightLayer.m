@@ -8,6 +8,7 @@
 
 #import "FightLayer.h"
 #import "FightScene.h"
+#import "AppDelegate.h"
 
 @implementation FightLayer
 
@@ -154,7 +155,7 @@ CGSize winSize;
         [enemyHealthBar setPercentage:enemyHealth];
         if (enemyHealth <= 0) {
             // Display something then start the next level
-            [[CCDirector sharedDirector] replaceScene:[FightScene node]];
+            [self ryuWon];
         }
     }
 }
@@ -182,8 +183,24 @@ CGSize winSize;
         [ryuHealthBar setPercentage:ryuHealth];
         if (ryuHealth <= 0) {
             // Display something then put player on the twitter screen.
+            [self enemyWon];
         }
     }
+}
+
+- (void)ryuWon {
+    // If we've beaten the last enemy, go to the twitter screen.
+    if (((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex == ((AppController *)[UIApplication sharedApplication].delegate).restaurants.count - 1) {
+
+    } else {
+        ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex++;
+        NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex];
+        [[CCDirector sharedDirector] replaceScene:[[FightScene alloc] initWithRestaurant:dict]];
+    }
+}
+
+- (void)enemyWon {
+    
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
