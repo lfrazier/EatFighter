@@ -12,6 +12,8 @@
 
 @implementation FightLayer
 
+#define PUNCH_DAMAGE 25;
+
 CGSize winSize;
 
 - (id)initWithRestaurant:(NSDictionary *)dict {
@@ -37,8 +39,8 @@ CGSize winSize;
 
 - (void)setUpCharacters {
     //Controlled Object (Ryu)
-    CCSpriteBatchNode *ryuNode = [CCSpriteBatchNode batchNodeWithFile:@"ryu-hd.png"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ryu-hd.plist"];
+    CCSpriteBatchNode *ryuNode = [CCSpriteBatchNode batchNodeWithFile:@"ryu.png"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ryu.plist"];
     
     ryu  = [CCSprite spriteWithSpriteFrameName:@"4.png"];
     ryu.position   = ccp(winSize.width/6, winSize.height/3);
@@ -151,7 +153,7 @@ CGSize winSize;
 - (void)checkForRyuHit {
     CGRect extendedReach = CGRectMake(ryu.boundingBox.origin.x - 10, ryu.boundingBox.origin.y - 10, ryu.boundingBox.size.width + 10, ryu.boundingBox.size.height + 10);
     if (CGRectIntersectsRect(extendedReach, enemy.boundingBox)) {
-        enemyHealth -= 25;
+        enemyHealth -= PUNCH_DAMAGE;
         [enemyHealthBar setPercentage:enemyHealth];
         if (enemyHealth <= 0) {
             // Display something then start the next level
@@ -179,7 +181,7 @@ CGSize winSize;
 - (void)checkForEnemyHit {
     CGRect extendedReach = CGRectMake(enemy.boundingBox.origin.x - 10, enemy.boundingBox.origin.y - 10, enemy.boundingBox.size.width + 10, enemy.boundingBox.size.height + 10);
     if (CGRectIntersectsRect(extendedReach, ryu.boundingBox)) {
-        ryuHealth -= 25;
+        ryuHealth -= PUNCH_DAMAGE;
         [ryuHealthBar setPercentage:ryuHealth];
         if (ryuHealth <= 0) {
             // Display something then put player on the twitter screen.
