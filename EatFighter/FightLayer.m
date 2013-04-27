@@ -103,6 +103,8 @@ CGSize winSize;
     ryuHealth = 100;
     ryuHealthBar.percentage = ryuHealth;
     ryuHealthBar.position = ccp(winSize.width/5, healthBarHeight);
+    ryuHealthBar.midpoint = ccp(0, 0);
+    ryuHealthBar.barChangeRate = ccp(1, 0);
     [self addChild:ryuHealthBar z:10];
     
     enemyHealthBar = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"green_health_bar.png"]];
@@ -112,6 +114,8 @@ CGSize winSize;
     enemyHealth = 100;
     enemyHealthBar.percentage = enemyHealth;
     enemyHealthBar.position = ccp(winSize.width/1.25,healthBarHeight);
+    enemyHealthBar.midpoint = ccp(1, 0);
+    enemyHealthBar.barChangeRate = ccp(1, 0);
     [self addChild:enemyHealthBar z:10];
     
     int labelOffset = 30;

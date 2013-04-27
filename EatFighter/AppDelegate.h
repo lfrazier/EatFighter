@@ -26,5 +26,6 @@
 @property (readonly) MyNavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) NSMutableArray *restaurants;
+@property int currentRestaurantIndex;
 
 @end
