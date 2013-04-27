@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "IntroLayer.h"
+#import "MainMenuScene.h"
 
 @implementation MyNavigationController
 
@@ -42,14 +42,14 @@
 // This is needed for iOS4 and iOS5 in order to ensure
 // that the 1st scene has the correct dimensions
 // This is not needed on iOS6 and could be added to the application:didFinish...
--(void) directorDidReshapeProjection:(CCDirector*)director
+/*-(void) directorDidReshapeProjection:(CCDirector*)director
 {
 	if(director.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 		[director runWithScene: [IntroLayer scene]];
 	}
-}
+}*/
 @end
 
 
@@ -135,6 +135,12 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    
+    if(director_.runningScene == nil) {
+		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
+		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
+		[director_ runWithScene: [MainMenuScene node]];
+	}
 	
 	return YES;
 }

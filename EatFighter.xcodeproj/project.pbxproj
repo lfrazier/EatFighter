@@ -137,8 +137,22 @@
 		E715EE4F172B6A76007F4B67 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = E715EE4E172B6A76007F4B67 /* vec4.c */; };
 		E715EE54172B6A76007F4B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE53172B6A76007F4B67 /* main.m */; };
 		E715EE57172B6A76007F4B67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE56172B6A76007F4B67 /* AppDelegate.m */; };
-		E715EE5A172B6A76007F4B67 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE59172B6A76007F4B67 /* HelloWorldLayer.m */; };
-		E715EE5D172B6A76007F4B67 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE5C172B6A76007F4B67 /* IntroLayer.m */; };
+		E715EE65172B6C38007F4B67 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE64172B6C38007F4B67 /* MainMenuScene.m */; };
+		E715EE68172B6E81007F4B67 /* FightScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE67172B6E81007F4B67 /* FightScene.m */; };
+		E715EE6D172B71B0007F4B67 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE6C172B71B0007F4B67 /* Restaurant.m */; };
+		E715EE71172B732D007F4B67 /* Joystick_norm.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE6E172B732D007F4B67 /* Joystick_norm.png */; };
+		E715EE72172B732D007F4B67 /* JoystickContainer_norm.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE6F172B732D007F4B67 /* JoystickContainer_norm.png */; };
+		E715EE73172B732D007F4B67 /* JoystickContainer_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE70172B732D007F4B67 /* JoystickContainer_trans.png */; };
+		E715EE74172B73EC007F4B67 /* ZJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE6A172B6FC0007F4B67 /* ZJoystick.m */; };
+		E715EE76172B7552007F4B67 /* stage.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE75172B7552007F4B67 /* stage.png */; };
+		E715EE78172B771E007F4B67 /* Joystick_norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE77172B771E007F4B67 /* Joystick_norm@2x.png */; };
+		E715EE7A172B7762007F4B67 /* JoystickContainer_norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE79172B7762007F4B67 /* JoystickContainer_norm@2x.png */; };
+		E715EE7C172B7782007F4B67 /* JoystickContainer_trans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE7B172B7782007F4B67 /* JoystickContainer_trans@2x.png */; };
+		E715EE7E172B78D4007F4B67 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE7D172B78D4007F4B67 /* 1.png */; };
+		E715EE81172B79DB007F4B67 /* ryu-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = E715EE7F172B79DB007F4B67 /* ryu-hd.plist */; };
+		E715EE82172B79DB007F4B67 /* ryu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE80172B79DB007F4B67 /* ryu-hd.png */; };
+		E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE83172B83D2007F4B67 /* green_health_bar.png */; };
+		E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE85172B8A7E007F4B67 /* Joystick_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -416,10 +430,26 @@
 		E715EE53172B6A76007F4B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E715EE55172B6A76007F4B67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E715EE56172B6A76007F4B67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E715EE58172B6A76007F4B67 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E715EE59172B6A76007F4B67 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		E715EE5B172B6A76007F4B67 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		E715EE5C172B6A76007F4B67 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		E715EE63172B6C38007F4B67 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		E715EE64172B6C38007F4B67 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		E715EE66172B6E81007F4B67 /* FightScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightScene.h; sourceTree = "<group>"; };
+		E715EE67172B6E81007F4B67 /* FightScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightScene.m; sourceTree = "<group>"; };
+		E715EE69172B6FC0007F4B67 /* ZJoystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJoystick.h; sourceTree = "<group>"; };
+		E715EE6A172B6FC0007F4B67 /* ZJoystick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJoystick.m; sourceTree = "<group>"; };
+		E715EE6B172B71B0007F4B67 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		E715EE6C172B71B0007F4B67 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		E715EE6E172B732D007F4B67 /* Joystick_norm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick_norm.png; sourceTree = "<group>"; };
+		E715EE6F172B732D007F4B67 /* JoystickContainer_norm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JoystickContainer_norm.png; sourceTree = "<group>"; };
+		E715EE70172B732D007F4B67 /* JoystickContainer_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JoystickContainer_trans.png; sourceTree = "<group>"; };
+		E715EE75172B7552007F4B67 /* stage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage.png; sourceTree = "<group>"; };
+		E715EE77172B771E007F4B67 /* Joystick_norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Joystick_norm@2x.png"; sourceTree = "<group>"; };
+		E715EE79172B7762007F4B67 /* JoystickContainer_norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JoystickContainer_norm@2x.png"; sourceTree = "<group>"; };
+		E715EE7B172B7782007F4B67 /* JoystickContainer_trans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JoystickContainer_trans@2x.png"; sourceTree = "<group>"; };
+		E715EE7D172B78D4007F4B67 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E715EE7F172B79DB007F4B67 /* ryu-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ryu-hd.plist"; sourceTree = "<group>"; };
+		E715EE80172B79DB007F4B67 /* ryu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ryu-hd.png"; sourceTree = "<group>"; };
+		E715EE83172B83D2007F4B67 /* green_health_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_health_bar.png; sourceTree = "<group>"; };
+		E715EE85172B8A7E007F4B67 /* Joystick_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,13 +510,17 @@
 			children = (
 				E715EE55172B6A76007F4B67 /* AppDelegate.h */,
 				E715EE56172B6A76007F4B67 /* AppDelegate.m */,
-				E715EE58172B6A76007F4B67 /* HelloWorldLayer.h */,
-				E715EE59172B6A76007F4B67 /* HelloWorldLayer.m */,
-				E715EE5B172B6A76007F4B67 /* IntroLayer.h */,
-				E715EE5C172B6A76007F4B67 /* IntroLayer.m */,
+				E715EE63172B6C38007F4B67 /* MainMenuScene.h */,
+				E715EE64172B6C38007F4B67 /* MainMenuScene.m */,
+				E715EE66172B6E81007F4B67 /* FightScene.h */,
+				E715EE67172B6E81007F4B67 /* FightScene.m */,
+				E715EE69172B6FC0007F4B67 /* ZJoystick.h */,
+				E715EE6A172B6FC0007F4B67 /* ZJoystick.m */,
 				E715ECC8172B6A73007F4B67 /* Resources */,
 				E715ECE0172B6A73007F4B67 /* libs */,
 				E715EE51172B6A76007F4B67 /* Supporting Files */,
+				E715EE6B172B71B0007F4B67 /* Restaurant.h */,
+				E715EE6C172B71B0007F4B67 /* Restaurant.m */,
 			);
 			path = EatFighter;
 			sourceTree = "<group>";
@@ -494,6 +528,18 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E715EE85172B8A7E007F4B67 /* Joystick_button.png */,
+				E715EE83172B83D2007F4B67 /* green_health_bar.png */,
+				E715EE7F172B79DB007F4B67 /* ryu-hd.plist */,
+				E715EE80172B79DB007F4B67 /* ryu-hd.png */,
+				E715EE7D172B78D4007F4B67 /* 1.png */,
+				E715EE75172B7552007F4B67 /* stage.png */,
+				E715EE77172B771E007F4B67 /* Joystick_norm@2x.png */,
+				E715EE6E172B732D007F4B67 /* Joystick_norm.png */,
+				E715EE79172B7762007F4B67 /* JoystickContainer_norm@2x.png */,
+				E715EE6F172B732D007F4B67 /* JoystickContainer_norm.png */,
+				E715EE70172B732D007F4B67 /* JoystickContainer_trans.png */,
+				E715EE7B172B7782007F4B67 /* JoystickContainer_trans@2x.png */,
 				E715ECC9172B6A73007F4B67 /* Default.png */,
 				E715ECCB172B6A73007F4B67 /* Default@2x.png */,
 				E715ECCD172B6A73007F4B67 /* Default-568h@2x.png */,
@@ -933,6 +979,18 @@
 				E715ECDC172B6A73007F4B67 /* Icon@2x.png in Resources */,
 				E715ECDF172B6A73007F4B67 /* iTunesArtwork in Resources */,
 				E715EE35172B6A75007F4B67 /* ChangeLog in Resources */,
+				E715EE71172B732D007F4B67 /* Joystick_norm.png in Resources */,
+				E715EE72172B732D007F4B67 /* JoystickContainer_norm.png in Resources */,
+				E715EE73172B732D007F4B67 /* JoystickContainer_trans.png in Resources */,
+				E715EE76172B7552007F4B67 /* stage.png in Resources */,
+				E715EE78172B771E007F4B67 /* Joystick_norm@2x.png in Resources */,
+				E715EE7A172B7762007F4B67 /* JoystickContainer_norm@2x.png in Resources */,
+				E715EE7C172B7782007F4B67 /* JoystickContainer_trans@2x.png in Resources */,
+				E715EE7E172B78D4007F4B67 /* 1.png in Resources */,
+				E715EE81172B79DB007F4B67 /* ryu-hd.plist in Resources */,
+				E715EE82172B79DB007F4B67 /* ryu-hd.png in Resources */,
+				E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */,
+				E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,8 +1110,10 @@
 				E715EE4F172B6A76007F4B67 /* vec4.c in Sources */,
 				E715EE54172B6A76007F4B67 /* main.m in Sources */,
 				E715EE57172B6A76007F4B67 /* AppDelegate.m in Sources */,
-				E715EE5A172B6A76007F4B67 /* HelloWorldLayer.m in Sources */,
-				E715EE5D172B6A76007F4B67 /* IntroLayer.m in Sources */,
+				E715EE65172B6C38007F4B67 /* MainMenuScene.m in Sources */,
+				E715EE68172B6E81007F4B67 /* FightScene.m in Sources */,
+				E715EE6D172B71B0007F4B67 /* Restaurant.m in Sources */,
+				E715EE74172B73EC007F4B67 /* ZJoystick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1170,7 @@
 				GCC_PREFIX_HEADER = EatFighter/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"EatFighter/libs/kazmath/include\"";
 				INFOPLIST_FILE = EatFighter/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1129,6 +1190,7 @@
 				GCC_PREFIX_HEADER = EatFighter/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"EatFighter/libs/kazmath/include\"";
 				INFOPLIST_FILE = EatFighter/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
