@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "MainMenuScene.h"
+#import "SimpleAudioEngine.h"
 
 @implementation MyNavigationController
 
@@ -55,7 +56,7 @@
 
 @implementation AppController
 
-@synthesize window=window_, navController=navController_, director=director_;
+@synthesize window=window_, navController=navController_, director=director_, restaurants;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -136,11 +137,42 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
     
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"restaurants.txt"];
+    
+    //Load the array
+    self.restaurants = [[NSMutableArray alloc] initWithContentsOfFile:fileName];
+    if(self.restaurants == nil)
+    {
+        //Array file didn't exist... create a new one
+        self.restaurants = [[NSMutableArray alloc] initWithCapacity:10];
+        
+        //Fill with default values
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Balthazar Restaurant", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Torrisi Italian Specials", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Ruby's", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Lure Fishbar", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Public", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Rubirosa", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Pravda", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"BondSt", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Ed's Lobster Bar", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+        [self.restaurants addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Corner Shop", @"name", @"", @"review", [NSNumber numberWithInt:0], @"stars", nil]];
+    }
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
+    [self.restaurants sortUsingDescriptors:sortDescriptors];
+    
+    [self.restaurants writeToFile:fileName atomically:YES];
+    
     if(director_.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 		[director_ runWithScene: [MainMenuScene node]];
 	}
+    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"ryu.mp3" loop:YES];
 	
 	return YES;
 }
@@ -175,7 +207,12 @@
 // application will be killed
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-	CC_DIRECTOR_END();
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    //2) Create the full file path by appending the desired file name
+    NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"restaurants.txt"];
+    [self.restaurants writeToFile:fileName atomically:YES];
+    CC_DIRECTOR_END();
 }
 
 // purge memory

@@ -8,6 +8,7 @@
 
 #import "MainMenuScene.h"
 #import "FightScene.h"
+#import "AppDelegate.h"
 
 @implementation MainMenuScene
 
@@ -25,7 +26,11 @@
 }
 
 - (void)newGame {
-    [[CCDirector sharedDirector] replaceScene:[FightScene node]];
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"stars" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
+    [((AppController *)[UIApplication sharedApplication].delegate).restaurants sortUsingDescriptors:sortDescriptors];
+    NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:0];
+    [[CCDirector sharedDirector] replaceScene:[[FightScene alloc] initWithRestaurant:dict]];
 }
 
 - (void)writeReview {

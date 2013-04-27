@@ -11,25 +11,9 @@
 #import "Restaurant.h"
 
 @interface FightScene : CCScene <ZJoystickDelegate> {
-    CCSprite *ryu;
-    CCSprite *enemy;
-    
-    CCAction *ryuIdleAction;
-    CCAction *enemyIdleAction;
-    
-    CCAction *ryuWalkAction;
-    CCAction *enemyWalkAction;
-    
-    CCAction *ryuPunchAction;
-    CCAction *enemyPunchAction;
-    
-    float ryuHealth;
-    float enemyHealth;
-    CCProgressTimer *ryuHealthBar;
-    CCProgressTimer *enemyHealthBar;
-    
     Restaurant *restaurant;
-    CCSprite *button;
 }
+
+- (id)initWithRestaurant:(NSDictionary *)dict;
 
 @end

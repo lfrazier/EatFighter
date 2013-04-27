@@ -13,10 +13,10 @@
 
 CGSize winSize;
 
-- (id)init {
+- (id)initWithRestaurant:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        FightLayer *fightLayer = [FightLayer node];
+        FightLayer *fightLayer = [[FightLayer alloc] initWithRestaurant:dict];
         [self addChild:fightLayer z:1];
     }
     return self;

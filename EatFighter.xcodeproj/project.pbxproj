@@ -154,6 +154,7 @@
 		E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE83172B83D2007F4B67 /* green_health_bar.png */; };
 		E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE85172B8A7E007F4B67 /* Joystick_button.png */; };
 		E715EE89172B8D47007F4B67 /* FightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE88172B8D46007F4B67 /* FightLayer.m */; };
+		E715EE8B172B9C11007F4B67 /* ryu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E715EE8A172B9C11007F4B67 /* ryu.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -453,6 +454,7 @@
 		E715EE85172B8A7E007F4B67 /* Joystick_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick_button.png; sourceTree = "<group>"; };
 		E715EE87172B8D46007F4B67 /* FightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightLayer.h; sourceTree = "<group>"; };
 		E715EE88172B8D46007F4B67 /* FightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightLayer.m; sourceTree = "<group>"; };
+		E715EE8A172B9C11007F4B67 /* ryu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ryu.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +535,7 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E715EE8A172B9C11007F4B67 /* ryu.mp3 */,
 				E715EE85172B8A7E007F4B67 /* Joystick_button.png */,
 				E715EE83172B83D2007F4B67 /* green_health_bar.png */,
 				E715EE7F172B79DB007F4B67 /* ryu-hd.plist */,
@@ -996,6 +999,7 @@
 				E715EE82172B79DB007F4B67 /* ryu-hd.png in Resources */,
 				E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */,
 				E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */,
+				E715EE8B172B9C11007F4B67 /* ryu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

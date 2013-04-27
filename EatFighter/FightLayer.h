@@ -28,9 +28,11 @@
     CCProgressTimer *ryuHealthBar;
     CCProgressTimer *enemyHealthBar;
     
-    Restaurant *restaurant;
+    NSDictionary *restaurant;
     CCSprite *button;
 
 }
+
+- (id)initWithRestaurant:(NSDictionary *)dict;
 
 @end

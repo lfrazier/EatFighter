@@ -13,10 +13,11 @@
 
 CGSize winSize;
 
-- (id)init {
+- (id)initWithRestaurant:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        self.isTouchEnabled = YES;
+        restaurant = dict;
+        self.touchEnabled = YES;
         winSize = [CCDirector sharedDirector].winSize;
         
         CCSprite *background = [CCSprite spriteWithFile:@"stage.png"];
@@ -112,12 +113,12 @@ CGSize winSize;
     [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"11.png"]];
     
     CCAnimation *punchAnim = [CCAnimation
-                             animationWithSpriteFrames:punchAnimFrames delay:0.25f];
+                             animationWithSpriteFrames:punchAnimFrames delay:0.2f];
     ryuPunchAction = [CCAnimate actionWithAnimation:punchAnim];
     [ryu runAction:ryuPunchAction];
     [ryu runAction:ryuIdleAction];
     
-    [self scheduleOnce:@selector(checkForRyuHit) delay:0.5];
+    [self scheduleOnce:@selector(checkForRyuHit) delay:0.4];
 }
 
 - (void)checkForRyuHit {

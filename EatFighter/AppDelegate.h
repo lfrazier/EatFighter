@@ -19,10 +19,12 @@
 	MyNavigationController *navController_;
 
 	CCDirectorIOS	*director_;							// weak ref
+    NSMutableArray *restaurants;
 }
 
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) MyNavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
+@property (nonatomic, retain) NSMutableArray *restaurants;
 
 @end
