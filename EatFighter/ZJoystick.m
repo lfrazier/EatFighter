@@ -245,7 +245,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 #pragma mark -
 #pragma mark Touches
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-	CCLOG(@"Joystick ccTouchBegan");
+	//CCLOG(@"Joystick ccTouchBegan");
     CGPoint location	= [touch locationInView: [touch view]];
 	location			= [[CCDirector sharedDirector] convertToGL:location];
 	//CGRect rect			= [self getBoundingRect];
@@ -253,7 +253,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
     //check if we already have touched the background
     //and check if our jostick is enabled
 	if (isCurrentlyControlling || _isJostickDisabled ) {
-        CCLOG(@"Joystick Disabled");
+        //CCLOG(@"Joystick Disabled");
 		return NO;
 	}
 	
@@ -263,12 +263,12 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 	//this is when the touch is inside the joystick
 	CGFloat actualPointDistance = getDistanceBetweenTwoPoints(self.position, location);
 	
-    NSLog(@"Actual Distance - %f", actualPointDistance);
+   // NSLog(@"Actual Distance - %f", actualPointDistance);
     
 	//check if the touch point is within the joystick container's radius
 	if (actualPointDistance <= _joystickRadius){
         //if (CGRectContainsPoint(rect, location)) {
-		CCLOG(@"Joystick Touched");
+		//CCLOG(@"Joystick Touched");
 		
         //call delegate method
         //check if _delegate conforms to the protocol and responds to the selector
@@ -305,7 +305,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 		id inAction = [CCFadeIn actionWithDuration:kControlActionInterval];
 		[_controller runAction:inAction];
 		
-		CCLOG(@"POINT DISTANCE - %f", getDistanceBetweenTwoPoints(self.position, location));
+		//CCLOG(@"POINT DISTANCE - %f", getDistanceBetweenTwoPoints(self.position, location));
 		
 		self.isControlling = YES;			//our joystick is now controlling
 		
@@ -315,7 +315,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 		return YES;
 	}
 	
-	CCLOG(@"Quadrant = %d", _controlQuadrant);
+	//CCLOG(@"Quadrant = %d", _controlQuadrant);
 	
     
 	
@@ -323,7 +323,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
-	CCLOG(@"Joystick ccTouchMoved");
+	//CCLOG(@"Joystick ccTouchMoved");
 	CGPoint location	= [touch locationInView: [touch view]];
 	location			= [[CCDirector sharedDirector] convertToGL:location];
 	//CGRect rect			= [self getBoundingRect];
@@ -435,7 +435,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-	CCLOG(@"Joystick ccTouchEnded");
+	//CCLOG(@"Joystick ccTouchEnded");
 	
     //execute our delegate method
     //check if _delegate conforms to the protocol and responds to the selector
@@ -474,7 +474,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 #pragma mark OnEnter & OnExit
 - (void)onEnter
 {	
-	CCLOG(@"onEnter");
+	//CCLOG(@"onEnter");
 	[super onEnter];
 	
 	self.isControlling = NO; //initially our joystick should stop controlling
@@ -494,7 +494,7 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 
 - (void)onExit
 {
-	CCLOG(@"onExit");
+	//CCLOG(@"onExit");
 	[self removeChild:_controller cleanup:YES];
 	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
 	

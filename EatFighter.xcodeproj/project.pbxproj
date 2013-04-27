@@ -153,6 +153,7 @@
 		E715EE82172B79DB007F4B67 /* ryu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE80172B79DB007F4B67 /* ryu-hd.png */; };
 		E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE83172B83D2007F4B67 /* green_health_bar.png */; };
 		E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E715EE85172B8A7E007F4B67 /* Joystick_button.png */; };
+		E715EE89172B8D47007F4B67 /* FightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE88172B8D46007F4B67 /* FightLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -450,6 +451,8 @@
 		E715EE80172B79DB007F4B67 /* ryu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ryu-hd.png"; sourceTree = "<group>"; };
 		E715EE83172B83D2007F4B67 /* green_health_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_health_bar.png; sourceTree = "<group>"; };
 		E715EE85172B8A7E007F4B67 /* Joystick_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick_button.png; sourceTree = "<group>"; };
+		E715EE87172B8D46007F4B67 /* FightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightLayer.h; sourceTree = "<group>"; };
+		E715EE88172B8D46007F4B67 /* FightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +517,8 @@
 				E715EE64172B6C38007F4B67 /* MainMenuScene.m */,
 				E715EE66172B6E81007F4B67 /* FightScene.h */,
 				E715EE67172B6E81007F4B67 /* FightScene.m */,
+				E715EE87172B8D46007F4B67 /* FightLayer.h */,
+				E715EE88172B8D46007F4B67 /* FightLayer.m */,
 				E715EE69172B6FC0007F4B67 /* ZJoystick.h */,
 				E715EE6A172B6FC0007F4B67 /* ZJoystick.m */,
 				E715ECC8172B6A73007F4B67 /* Resources */,
@@ -1114,6 +1119,7 @@
 				E715EE68172B6E81007F4B67 /* FightScene.m in Sources */,
 				E715EE6D172B71B0007F4B67 /* Restaurant.m in Sources */,
 				E715EE74172B73EC007F4B67 /* ZJoystick.m in Sources */,
+				E715EE89172B8D47007F4B67 /* FightLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
