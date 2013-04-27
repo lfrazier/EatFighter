@@ -100,5 +100,6 @@ typedef enum {
 +(id)joystickNormalSpriteFile:(NSString *)filename1 
 		   selectedSpriteFile:(NSString *)filename2 
 		 controllerSpriteFile:(NSString *)controllerSprite;
--(void)deactivateScheduler;;
+-(void)deactivateScheduler;
+- (void)activateScheduler;
 @end

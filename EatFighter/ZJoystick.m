@@ -488,8 +488,8 @@ tControlQuadrant getQuadrantForPoint (CGPoint point) {
 	
 	//we call touch dispatcher to swallow touches
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self 
-													 priority:0 
-											  swallowsTouches:YES];
+													 priority:0
+											  swallowsTouches:NO];
 }
 
 - (void)onExit

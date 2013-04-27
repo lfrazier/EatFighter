@@ -30,6 +30,8 @@
     
     NSDictionary *restaurant;
     CCSprite *button;
+    
+    ZJoystick *_joystick;
 
 }
 

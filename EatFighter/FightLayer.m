@@ -133,6 +133,22 @@ CGSize winSize;
     [self addChild:enemyLabel z:10];
 }
 
+- (void)setUpJoystickAndButtons {
+    //Joystick
+    _joystick	= [ZJoystick joystickNormalSpriteFile:@"JoystickContainer_norm.png" selectedSpriteFile:@"JoystickContainer_trans.png" controllerSpriteFile:@"Joystick_norm.png"];
+    _joystick.position	= ccp(_joystick.contentSize.width/2, _joystick.contentSize.height/2);
+    _joystick.delegate	= self;				//Joystick Delegate
+    _joystick.controlledObject  = ryu;     //we set our controlled object which the blue circle
+    _joystick.speedRatio         = 4.0f;                //we set speed ratio, movement speed of blue circle once controlled to any direction
+    _joystick.joystickRadius     = 50.0f;               //Added in v1.2
+    [self addChild:_joystick z:10];
+    
+    float distanceFromEdge = 50;
+    button = [CCSprite spriteWithFile:@"Joystick_button.png"];
+    button.position = CGPointMake(winSize.width - distanceFromEdge, distanceFromEdge);
+    [self addChild:button z:20];
+}
+
 - (void)ryuPunch {
     // Animation
     [ryu stopAllActions];
@@ -210,28 +226,13 @@ CGSize winSize;
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     if (CGRectContainsPoint(button.boundingBox, touchLocation)) {
         [self ryuPunch];
+        
     }
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-}
-
-- (void)setUpJoystickAndButtons {
-    //Joystick
-    ZJoystick *_joystick	= [ZJoystick joystickNormalSpriteFile:@"JoystickContainer_norm.png" selectedSpriteFile:@"JoystickContainer_trans.png" controllerSpriteFile:@"Joystick_norm.png"];
-    _joystick.position	= ccp(_joystick.contentSize.width/2, _joystick.contentSize.height/2);
-    _joystick.delegate	= self;				//Joystick Delegate
-    _joystick.controlledObject  = ryu;     //we set our controlled object which the blue circle
-    _joystick.speedRatio         = 4.0f;                //we set speed ratio, movement speed of blue circle once controlled to any direction
-    _joystick.joystickRadius     = 50.0f;               //Added in v1.2
-    [self addChild:_joystick z:10];
-    
-    float distanceFromEdge = 50;
-    button = [CCSprite spriteWithFile:@"Joystick_button.png"];
-    button.position = CGPointMake(winSize.width - distanceFromEdge, distanceFromEdge);
-    [self addChild:button z:10];
 }
 
 - (void)joystickControlBegan {
@@ -256,7 +257,7 @@ CGSize winSize;
 }
 
 - (void)joystickControlEnded {
-    [ryu stopAction:ryuWalkAction];
+    [ryu stopAllActions];
     [ryu runAction:ryuIdleAction];
 }
 
