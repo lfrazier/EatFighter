@@ -16,6 +16,7 @@
 @implementation FightLayer
 
 #define PUNCH_DAMAGE 25;
+#define BUTTON_SOUND @"button-21.mp3"
 
 CGSize winSize;
 
@@ -159,7 +160,7 @@ CGSize winSize;
         
         // Simple AI: Stars are inversely, linearly proportional to punching speed.
         float interval = 6 - stars;
-        [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:5];
+        [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:2];
     }];
 }
 
@@ -232,6 +233,7 @@ CGSize winSize;
     // If we've beaten the last enemy, go to the twitter screen.
     if (((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex == ((AppController *)[UIApplication sharedApplication].delegate).restaurants.count - 1) {
         [ModalAlert Message:[NSString stringWithFormat:@"You win! You can eat lunch at \n%@\n today!", [restaurant objectForKey:@"name"]] onLayer:self option1:@"Main Menu" yesBlock:^{
+            [[SimpleAudioEngine sharedEngine] playEffect:@"button-21.mp3"];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
         } option2:@"Tweet" noBlock:^{
             [self sendTweetWithRestaurant:[restaurant objectForKey:@"name"]];

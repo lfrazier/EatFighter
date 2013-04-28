@@ -169,6 +169,7 @@
 		E759D9C9172D6C2B000AB1DF /* RestuarantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */; };
 		E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */; };
 		E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CC172DC707000AB1DF /* Woosh.mp3 */; };
+		E759D9CF172DD333000AB1DF /* button-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CE172DD333000AB1DF /* button-21.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -487,6 +488,7 @@
 		E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestuarantDetailViewController.xib; sourceTree = "<group>"; };
 		E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Strong_Punch.mp3; sourceTree = "<group>"; };
 		E759D9CC172DC707000AB1DF /* Woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woosh.mp3; sourceTree = "<group>"; };
+		E759D9CE172DD333000AB1DF /* button-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-21.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +583,7 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E759D9CE172DD333000AB1DF /* button-21.mp3 */,
 				E759D9CC172DC707000AB1DF /* Woosh.mp3 */,
 				E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */,
 				E759D9BB172CAD65000AB1DF /* AldotheApache.ttf */,
@@ -1060,6 +1063,7 @@
 				E759D9C9172D6C2B000AB1DF /* RestuarantDetailViewController.xib in Resources */,
 				E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */,
 				E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */,
+				E759D9CF172DD333000AB1DF /* button-21.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

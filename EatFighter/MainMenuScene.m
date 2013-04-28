@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "InstructionsViewController.h"
 #import "RestaurantViewController.h"
+#import "SimpleAudioEngine.h"
 
 @implementation MainMenuScene
 
@@ -30,6 +31,7 @@
 }
 
 - (void)newGame {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"button-21.mp3"];
     ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex = 0;
     NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"stars" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];

@@ -70,6 +70,7 @@
 @implementation ModalAlert
 
 + (void) CloseAlert: (CCSprite*) alertDialog onCoverLayer: (CCLayer*) coverLayer executingBlock: (void(^)())block {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"button-21.mp3"];
     // shrink dialog box
     [alertDialog runAction:[CCScaleTo actionWithDuration:kAnimationTime scale:0]];
     
