@@ -36,6 +36,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>ginko.ttf</string>
+		<string>AldotheApache.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>

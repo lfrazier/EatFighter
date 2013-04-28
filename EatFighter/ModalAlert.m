@@ -34,7 +34,7 @@
 #define kAnimationTime 0.4f
 #define kDialogImg @"dialogBox.png"
 #define kButtonImg @"dialogButton.png"
-#define kFontName @"Ginko"
+#define kFontName @"Aldo the Apache"
 
 // class that implements a black colored layer that will cover the whole screen 
 // and eats all touches except within the dialog box child
@@ -101,8 +101,8 @@
     
     // add the alert text
     CGSize msgSize = CGSizeMake(dialog.contentSize.width * 0.9, dialog.contentSize.height * 0.55);
-    float fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?42:20;
-    float buttonFontSize = 20;
+    float fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?42:24;
+    float buttonFontSize = 22;
     
     CCLabelTTF *dialogMsg = [CCLabelTTF labelWithString:message dimensions: msgSize alignment:UITextAlignmentCenter 
                                                fontName:kFontName fontSize:fontSize];

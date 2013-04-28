@@ -113,12 +113,12 @@ CGSize winSize;
     [self addChild:enemyHealthBar z:10];
     
     int labelOffset = 30;
-    CCLabelTTF *ryuLabel = [CCLabelTTF labelWithString:@"FUELED" fontName:@"Ginko" fontSize:30];
+    CCLabelTTF *ryuLabel = [CCLabelTTF labelWithString:@"FUELED" fontName:@"Aldo the Apache" fontSize:30];
     ryuLabel.position = ccp(winSize.width/5,healthBarHeight + labelOffset);
     ryuLabel.color = ccWHITE;
     [self addChild:ryuLabel z:10];
     
-    CCLabelTTF *enemyLabel = [CCLabelTTF labelWithString:[restaurant objectForKey:@"name"] fontName:@"Ginko" fontSize:18];
+    CCLabelTTF *enemyLabel = [CCLabelTTF labelWithString:[restaurant objectForKey:@"name"] fontName:@"Aldo the Apache" fontSize:18];
     enemyLabel.position = ccp(winSize.width/1.25,healthBarHeight + labelOffset);
     enemyLabel.color = ccRED;
     [self addChild:enemyLabel z:10];

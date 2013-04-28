@@ -15,6 +15,8 @@
 - (id)init {
     self = [super init];
     if (self) {
+        [CCMenuItemFont setFontName:@"Aldo the Apache"];
+        [CCMenuItemFont setFontSize:50];
         CCMenuItemFont *startNew = [CCMenuItemFont itemWithString:@"New Game" target:self selector: @selector(newGame)];
         CCMenuItemFont *leaveReview = [CCMenuItemFont itemWithString:@"Write a Review" target:self selector: @selector(writeReview)];
         CCMenuItemFont *instructions = [CCMenuItemFont itemWithString:@"Instructions" target:self selector: @selector(showInstructions)];
