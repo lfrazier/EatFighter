@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface RestaurantViewController : UITableViewController {
-    
+@interface RestaurantViewController : UITableViewController <UIAlertViewDelegate> {
+    NSIndexPath *indexPathToDelete; // For the tableView
+    int indexToDelete; // For the array
 }
+
+@property (nonatomic, retain) NSIndexPath *indexPathToDelete;
 
 @end

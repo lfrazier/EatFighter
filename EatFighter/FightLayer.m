@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "ModalAlert.h"
 #import "MainMenuScene.h"
+#import "SimpleAudioEngine.h"
 
 @implementation FightLayer
 
@@ -176,7 +177,9 @@ CGSize winSize;
     [ryu runAction:ryuPunchAction];
     [ryu runAction:ryuIdleAction];
     
-    [self scheduleOnce:@selector(checkForRyuHit) delay:0.4];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Woosh.mp3"];
+    
+    [self scheduleOnce:@selector(checkForRyuHit) delay:0.2];
 }
 
 - (void)checkForRyuHit {
@@ -188,6 +191,7 @@ CGSize winSize;
             // Display something then start the next level
             [self ryuWon];
         }
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Strong_Punch.mp3"];
     }
 }
 
@@ -204,7 +208,10 @@ CGSize winSize;
     enemyPunchAction = [CCAnimate actionWithAnimation:punchAnim];
     [enemy runAction:enemyPunchAction];
     [enemy runAction:enemyIdleAction];
-    [self scheduleOnce:@selector(checkForEnemyHit) delay:0.4];
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Woosh.mp3"];
+    
+    [self scheduleOnce:@selector(checkForEnemyHit) delay:0.2];
 }
 
 - (void)checkForEnemyHit {
@@ -216,6 +223,7 @@ CGSize winSize;
             // Display something then put player on the twitter screen.
             [self enemyWon];
         }
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Strong_Punch.mp3" pitch:1.5 pan:1 gain:1];
     }
 }
 

@@ -7,12 +7,15 @@
 //
 
 #import "RestaurantViewController.h"
+#import "RestuarantDetailViewController.h"
 
 @interface RestaurantViewController ()
 
 @end
 
 @implementation RestaurantViewController
+
+@synthesize indexPathToDelete;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -91,9 +94,20 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [((AppController *)[UIApplication sharedApplication].delegate).restaurants removeObjectAtIndex:indexPath.row];
+        indexPathToDelete = [indexPath retain];
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Thumbs-Down" message:[NSString stringWithFormat:@"Are you sure you want to thumbs-down %@? It will never show up again.", [[((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:indexPath.row] objectForKey:@"name"]] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil] autorelease];
+        [alert show];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != 0) {
+        [((AppController *)[UIApplication sharedApplication].delegate).restaurants removeObjectAtIndex:indexPathToDelete.row];
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPathToDelete] withRowAnimation:UITableViewRowAnimationFade];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -101,12 +115,8 @@
         NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"restaurants.txt"];
         [((AppController *)[UIApplication sharedApplication].delegate).restaurants writeToFile:fileName atomically:YES];
         [self.tableView reloadData];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-
 
 /*
 // Override to support rearranging the table view.
@@ -128,14 +138,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    RestuarantDetailViewController *detailViewController = [[RestuarantDetailViewController alloc] initWithRestaurantID:indexPath.row];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

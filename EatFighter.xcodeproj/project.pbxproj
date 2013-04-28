@@ -165,6 +165,10 @@
 		E759D9C0172CB092000AB1DF /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E759D9BE172CB092000AB1DF /* InstructionsViewController.m */; };
 		E759D9C1172CB092000AB1DF /* InstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E759D9BF172CB092000AB1DF /* InstructionsViewController.xib */; };
 		E759D9C4172CD199000AB1DF /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E759D9C3172CD198000AB1DF /* RestaurantViewController.m */; };
+		E759D9C8172D6C2B000AB1DF /* RestuarantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E759D9C6172D6C2B000AB1DF /* RestuarantDetailViewController.m */; };
+		E759D9C9172D6C2B000AB1DF /* RestuarantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */; };
+		E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */; };
+		E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CC172DC707000AB1DF /* Woosh.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -478,6 +482,11 @@
 		E759D9BF172CB092000AB1DF /* InstructionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionsViewController.xib; sourceTree = "<group>"; };
 		E759D9C2172CD198000AB1DF /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
 		E759D9C3172CD198000AB1DF /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
+		E759D9C5172D6C2B000AB1DF /* RestuarantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestuarantDetailViewController.h; sourceTree = "<group>"; };
+		E759D9C6172D6C2B000AB1DF /* RestuarantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestuarantDetailViewController.m; sourceTree = "<group>"; };
+		E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestuarantDetailViewController.xib; sourceTree = "<group>"; };
+		E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Strong_Punch.mp3; sourceTree = "<group>"; };
+		E759D9CC172DC707000AB1DF /* Woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woosh.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +571,9 @@
 				E759D9BF172CB092000AB1DF /* InstructionsViewController.xib */,
 				E759D9C2172CD198000AB1DF /* RestaurantViewController.h */,
 				E759D9C3172CD198000AB1DF /* RestaurantViewController.m */,
+				E759D9C5172D6C2B000AB1DF /* RestuarantDetailViewController.h */,
+				E759D9C6172D6C2B000AB1DF /* RestuarantDetailViewController.m */,
+				E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */,
 			);
 			path = EatFighter;
 			sourceTree = "<group>";
@@ -569,6 +581,8 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E759D9CC172DC707000AB1DF /* Woosh.mp3 */,
+				E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */,
 				E759D9BB172CAD65000AB1DF /* AldotheApache.ttf */,
 				E759D9B2172C21C3000AB1DF /* dialogBox-hd.png */,
 				E759D9B3172C21C3000AB1DF /* dialogButton-hd.png */,
@@ -1043,6 +1057,9 @@
 				E759D9B5172C21C3000AB1DF /* dialogButton-hd.png in Resources */,
 				E759D9BC172CAD6B000AB1DF /* AldotheApache.ttf in Resources */,
 				E759D9C1172CB092000AB1DF /* InstructionsViewController.xib in Resources */,
+				E759D9C9172D6C2B000AB1DF /* RestuarantDetailViewController.xib in Resources */,
+				E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */,
+				E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,6 +1187,7 @@
 				E759D9B6172C220E000AB1DF /* ModalAlert.m in Sources */,
 				E759D9C0172CB092000AB1DF /* InstructionsViewController.m in Sources */,
 				E759D9C4172CD199000AB1DF /* RestaurantViewController.m in Sources */,
+				E759D9C8172D6C2B000AB1DF /* RestuarantDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
