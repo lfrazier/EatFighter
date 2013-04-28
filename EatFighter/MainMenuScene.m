@@ -30,6 +30,7 @@
 }
 
 - (void)newGame {
+    ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex = 0;
     NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"stars" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
     [((AppController *)[UIApplication sharedApplication].delegate).restaurants sortUsingDescriptors:sortDescriptors];

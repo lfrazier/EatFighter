@@ -223,7 +223,7 @@ CGSize winSize;
             // Display something then put player on the twitter screen.
             [self enemyWon];
         }
-        [[SimpleAudioEngine sharedEngine] playEffect:@"Strong_Punch.mp3" pitch:1.5 pan:1 gain:1];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Strong_Punch.mp3" pitch:1.4 pan:1 gain:1];
     }
 }
 
