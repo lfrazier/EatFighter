@@ -9,6 +9,7 @@
 #import "CCLayer.h"
 #import "ZJoystick.h"
 #import "Restaurant.h"
+#import <Social/Social.h>
 
 @interface FightLayer : CCLayer<ZJoystickDelegate> {
     CCSprite *ryu;

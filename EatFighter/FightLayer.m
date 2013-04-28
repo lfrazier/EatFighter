@@ -9,6 +9,8 @@
 #import "FightLayer.h"
 #import "FightScene.h"
 #import "AppDelegate.h"
+#import "ModalAlert.h"
+#import "MainMenuScene.h"
 
 @implementation FightLayer
 
@@ -122,7 +124,7 @@ CGSize winSize;
     [self addChild:enemyHealthBar z:10];
     
     int labelOffset = 30;
-    CCLabelTTF *ryuLabel = [CCLabelTTF labelWithString:@"Hungry Ryu" fontName:@"Ginko" fontSize:30];
+    CCLabelTTF *ryuLabel = [CCLabelTTF labelWithString:@"FUELED" fontName:@"Ginko" fontSize:30];
     ryuLabel.position = ccp(winSize.width/5,healthBarHeight + labelOffset);
     ryuLabel.color = ccWHITE;
     [self addChild:ryuLabel z:10];
@@ -183,8 +185,8 @@ CGSize winSize;
     [enemy stopAllActions];
     NSMutableArray *punchAnimFrames = [NSMutableArray array];
     [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"9.png"]];
-    [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"10.png"]];
-    [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"11.png"]];
+    [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"8.png"]];
+    [punchAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"7.png"]];
     
     CCAnimation *punchAnim = [CCAnimation
                               animationWithSpriteFrames:punchAnimFrames delay:0.2f];
@@ -209,7 +211,7 @@ CGSize winSize;
 - (void)ryuWon {
     // If we've beaten the last enemy, go to the twitter screen.
     if (((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex == ((AppController *)[UIApplication sharedApplication].delegate).restaurants.count - 1) {
-
+        
     } else {
         ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex++;
         NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex];
@@ -218,7 +220,27 @@ CGSize winSize;
 }
 
 - (void)enemyWon {
-    
+    [self unscheduleAllSelectors];
+    [ModalAlert Message:[NSString stringWithFormat:@"You lose! You must eat lunch at \n%@\n today!", [restaurant objectForKey:@"name"]] onLayer:self option1:@"Main Menu" yesBlock:^{
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+    } option2:@"Tweet" noBlock:^{
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            SLComposeViewController *tweetController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [tweetController setInitialText:[NSString stringWithFormat:@"I'll be eating lunch at %@ today, thanks to #EatFighterII!", [restaurant objectForKey:@"name"]]];
+            tweetController.completionHandler = ^(SLComposeViewControllerResult result){
+                //  dismiss the Tweet Sheet
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [tweetController dismissViewControllerAnimated:NO completion:^{
+                        NSLog(@"Tweet Sheet has been dismissed.");
+                    }];
+                });
+                [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+            };
+            [((AppController *)[UIApplication sharedApplication].delegate).navController presentViewController:tweetController animated:YES completion:nil];
+        } else {
+            [[[[UIAlertView alloc] initWithTitle:@"Cannot Send Tweet" message:@"You cannot tweet from this device at this time. Please check your settings and try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease] show];
+        }
+    }];
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

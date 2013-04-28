@@ -156,6 +156,11 @@
 		E715EE89172B8D47007F4B67 /* FightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E715EE88172B8D46007F4B67 /* FightLayer.m */; };
 		E715EE8B172B9C11007F4B67 /* ryu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E715EE8A172B9C11007F4B67 /* ryu.mp3 */; };
 		E759D9AF172BB035000AB1DF /* ginko.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E759D9AD172BAD4F000AB1DF /* ginko.ttf */; };
+		E759D9B4172C21C3000AB1DF /* dialogBox-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E759D9B2172C21C3000AB1DF /* dialogBox-hd.png */; };
+		E759D9B5172C21C3000AB1DF /* dialogButton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E759D9B3172C21C3000AB1DF /* dialogButton-hd.png */; };
+		E759D9B6172C220E000AB1DF /* ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E759D9B1172C2153000AB1DF /* ModalAlert.m */; };
+		E759D9B8172C99F1000AB1DF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E759D9B7172C99F1000AB1DF /* Social.framework */; };
+		E759D9BA172C9A97000AB1DF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E759D9B9172C9A97000AB1DF /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -457,6 +462,12 @@
 		E715EE88172B8D46007F4B67 /* FightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightLayer.m; sourceTree = "<group>"; };
 		E715EE8A172B9C11007F4B67 /* ryu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ryu.mp3; sourceTree = "<group>"; };
 		E759D9AD172BAD4F000AB1DF /* ginko.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ginko.ttf; sourceTree = "<group>"; };
+		E759D9B0172C2153000AB1DF /* ModalAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalAlert.h; sourceTree = "<group>"; };
+		E759D9B1172C2153000AB1DF /* ModalAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalAlert.m; sourceTree = "<group>"; };
+		E759D9B2172C21C3000AB1DF /* dialogBox-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialogBox-hd.png"; sourceTree = "<group>"; };
+		E759D9B3172C21C3000AB1DF /* dialogButton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialogButton-hd.png"; sourceTree = "<group>"; };
+		E759D9B7172C99F1000AB1DF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E759D9B9172C9A97000AB1DF /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +475,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E759D9BA172C9A97000AB1DF /* Twitter.framework in Frameworks */,
+				E759D9B8172C99F1000AB1DF /* Social.framework in Frameworks */,
 				E715ECB6172B6A73007F4B67 /* QuartzCore.framework in Frameworks */,
 				E715ECB8172B6A73007F4B67 /* OpenGLES.framework in Frameworks */,
 				E715ECBA172B6A73007F4B67 /* OpenAL.framework in Frameworks */,
@@ -499,6 +512,8 @@
 		E715ECB4172B6A73007F4B67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E759D9B9172C9A97000AB1DF /* Twitter.framework */,
+				E759D9B7172C99F1000AB1DF /* Social.framework */,
 				E715ECB5172B6A73007F4B67 /* QuartzCore.framework */,
 				E715ECB7172B6A73007F4B67 /* OpenGLES.framework */,
 				E715ECB9172B6A73007F4B67 /* OpenAL.framework */,
@@ -525,6 +540,8 @@
 				E715EE88172B8D46007F4B67 /* FightLayer.m */,
 				E715EE69172B6FC0007F4B67 /* ZJoystick.h */,
 				E715EE6A172B6FC0007F4B67 /* ZJoystick.m */,
+				E759D9B0172C2153000AB1DF /* ModalAlert.h */,
+				E759D9B1172C2153000AB1DF /* ModalAlert.m */,
 				E715ECC8172B6A73007F4B67 /* Resources */,
 				E715ECE0172B6A73007F4B67 /* libs */,
 				E715EE51172B6A76007F4B67 /* Supporting Files */,
@@ -537,6 +554,8 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E759D9B2172C21C3000AB1DF /* dialogBox-hd.png */,
+				E759D9B3172C21C3000AB1DF /* dialogButton-hd.png */,
 				E759D9AD172BAD4F000AB1DF /* ginko.ttf */,
 				E715EE8A172B9C11007F4B67 /* ryu.mp3 */,
 				E715EE85172B8A7E007F4B67 /* Joystick_button.png */,
@@ -1004,6 +1023,8 @@
 				E715EE84172B83D2007F4B67 /* green_health_bar.png in Resources */,
 				E715EE86172B8A7E007F4B67 /* Joystick_button.png in Resources */,
 				E715EE8B172B9C11007F4B67 /* ryu.mp3 in Resources */,
+				E759D9B4172C21C3000AB1DF /* dialogBox-hd.png in Resources */,
+				E759D9B5172C21C3000AB1DF /* dialogButton-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,6 +1149,7 @@
 				E715EE6D172B71B0007F4B67 /* Restaurant.m in Sources */,
 				E715EE74172B73EC007F4B67 /* ZJoystick.m in Sources */,
 				E715EE89172B8D47007F4B67 /* FightLayer.m in Sources */,
+				E759D9B6172C220E000AB1DF /* ModalAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
