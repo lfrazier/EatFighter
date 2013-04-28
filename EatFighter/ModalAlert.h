@@ -35,5 +35,6 @@
 + (void) Ask: (NSString *) question onLayer: (CCLayer *) layer yesBlock: (void(^)())yesBlock noBlock: (void(^)())noBlock;
 + (void) Confirm: (NSString *) question onLayer: (CCLayer *) layer okBlock: (void(^)())okBlock cancelBlock: (void(^)())cancelBlock;
 + (void) Tell: (NSString *) statement onLayer: (CCLayer *) layer okBlock: (void(^)())okBlock;
++ (void) Tell: (NSString *) statement onLayer: (CCLayer *) layer option1:(NSString *)opt1 okBlock: (void(^)())okBlock;
 + (void) Message: (NSString *) message onLayer: (CCLayer *) layer option1:(NSString *)opt1 yesBlock: (void(^)())yesBlock option2:(NSString *)opt2 noBlock: (void(^)())noBlock;
 @end

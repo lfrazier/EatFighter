@@ -35,6 +35,8 @@ CGSize winSize;
         
         [self setUpHealthBars];
         
+        [self displayIntro];
+        
     }
     return self;
 }
@@ -81,19 +83,6 @@ CGSize winSize;
     float b = arc4random() % 255;
     enemy.color = ccc3(r, g, b);
     [ryuNode addChild:enemy z:5];
-    
-    // Enemy AI
-    // The more stars the restaurant has, the harder it is to beat
-    int stars = [(NSNumber *)[restaurant objectForKey:@"stars"] integerValue];
-    
-    // Complicated AI: come back to this
-    /*double randomOffset = (arc4random() % 100) / 100.0;
-    float interval = 6 - (stars + randomOffset);
-     */
-    
-    // Simple AI: Stars are inversely, linearly proportional to punching speed.
-    float interval = 6 - stars;
-    [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:5];
     
     [self addChild:ryuNode z:5];
 }
@@ -149,6 +138,28 @@ CGSize winSize;
     button = [CCSprite spriteWithFile:@"Joystick_button.png"];
     button.position = CGPointMake(winSize.width - distanceFromEdge, distanceFromEdge);
     [self addChild:button z:20];
+}
+
+- (void)displayIntro {
+    NSString *review = [restaurant objectForKey:@"review"];
+    if ([review isEqual:@""]) {
+        review = @"No Review";
+    }
+    
+    [ModalAlert Tell:[NSString stringWithFormat:@"%@\n\n%@", [restaurant objectForKey:@"name"], review] onLayer:self option1:@"Fight!" okBlock:^{
+        // Enemy AI
+        // The more stars the restaurant has, the harder it is to beat
+        int stars = [(NSNumber *)[restaurant objectForKey:@"stars"] integerValue];
+        
+        // Complicated AI: come back to this
+        /*double randomOffset = (arc4random() % 100) / 100.0;
+         float interval = 6 - (stars + randomOffset);
+         */
+        
+        // Simple AI: Stars are inversely, linearly proportional to punching speed.
+        float interval = 6 - stars;
+        [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:5];
+    }];
 }
 
 - (void)ryuPunch {

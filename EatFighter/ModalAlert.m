@@ -169,6 +169,10 @@
 + (void) Tell: (NSString *) statement onLayer: (CCLayer *) layer okBlock: (void(^)())okBlock {
     [self ShowAlert:statement onLayer:layer withOpt1:@"Ok" withOpt1Block: okBlock andOpt2:nil withOpt2Block:nil];
 }
+
++ (void) Tell: (NSString *) statement onLayer: (CCLayer *) layer option1:(NSString *)opt1 okBlock: (void(^)())okBlock {
+    [self ShowAlert:statement onLayer:layer withOpt1:opt1 withOpt1Block: okBlock andOpt2:nil withOpt2Block:nil];
+}
  
 + (void) Message: (NSString *) message onLayer: (CCLayer *) layer option1:(NSString *)opt1 yesBlock: (void(^)())yesBlock option2:(NSString *)opt2 noBlock: (void(^)())noBlock {
     [self ShowAlert:message onLayer:layer withOpt1:opt1 withOpt1Block:yesBlock andOpt2:opt2 withOpt2Block:noBlock];

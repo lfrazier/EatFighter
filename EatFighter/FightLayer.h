@@ -33,7 +33,6 @@
     CCSprite *button;
     
     ZJoystick *_joystick;
-
 }
 
 - (id)initWithRestaurant:(NSDictionary *)dict;
