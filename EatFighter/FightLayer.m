@@ -220,38 +220,64 @@ CGSize winSize;
 }
 
 - (void)ryuWon {
+    [self unscheduleAllSelectors];
     // If we've beaten the last enemy, go to the twitter screen.
     if (((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex == ((AppController *)[UIApplication sharedApplication].delegate).restaurants.count - 1) {
-        
+        [ModalAlert Message:[NSString stringWithFormat:@"You win! You can eat lunch at \n%@\n today!", [restaurant objectForKey:@"name"]] onLayer:self option1:@"Main Menu" yesBlock:^{
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+        } option2:@"Tweet" noBlock:^{
+            [self sendTweetWithRestaurant:[restaurant objectForKey:@"name"]];
+        }];
     } else {
         ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex++;
         NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex];
-        [[CCDirector sharedDirector] replaceScene:[[FightScene alloc] initWithRestaurant:dict]];
+        [ModalAlert Tell:@"You win... for now. The next challenger approaches!" onLayer:self option1:@"Next" okBlock:^{
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5 scene:[[FightScene alloc] initWithRestaurant:dict]]];
+        }];
     }
 }
 
 - (void)enemyWon {
     [self unscheduleAllSelectors];
-    [ModalAlert Message:[NSString stringWithFormat:@"You lose! You must eat lunch at \n%@\n today!", [restaurant objectForKey:@"name"]] onLayer:self option1:@"Main Menu" yesBlock:^{
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
-    } option2:@"Tweet" noBlock:^{
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-            SLComposeViewController *tweetController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            [tweetController setInitialText:[NSString stringWithFormat:@"I'll be eating lunch at %@ today, thanks to #EatFighterII!", [restaurant objectForKey:@"name"]]];
-            tweetController.completionHandler = ^(SLComposeViewControllerResult result){
-                //  dismiss the Tweet Sheet
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [tweetController dismissViewControllerAnimated:NO completion:^{
-                        NSLog(@"Tweet Sheet has been dismissed.");
-                    }];
-                });
-                [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
-            };
-            [((AppController *)[UIApplication sharedApplication].delegate).navController presentViewController:tweetController animated:YES completion:nil];
+    int index = ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex;
+    if (index == 0) { // You lost on the first enemy. You get no lunch.
+        [ModalAlert Message:@"You lose! You get no lunch today!" onLayer:self option1:@"Main Menu" yesBlock:^{
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+        } option2:@"Tweet" noBlock:^{
+            [self sendTweetWithRestaurant:@"-none-"];
+        }];
+
+    } else {
+        NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:index-1];
+        [ModalAlert Message:[NSString stringWithFormat:@"You lose! You must eat lunch at \n%@\n today!", [dict objectForKey:@"name"]] onLayer:self option1:@"Main Menu" yesBlock:^{
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+        } option2:@"Tweet" noBlock:^{
+            [self sendTweetWithRestaurant:[dict objectForKey:@"name"]];
+        }];
+    }
+}
+
+- (void)sendTweetWithRestaurant:(NSString *)name {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        SLComposeViewController *tweetController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        if ([name isEqual:@"-none-"]) {
+            [tweetController setInitialText:@"I won't be eating any lunch today, because I lost at #EatFighterII!"];
         } else {
-            [[[[UIAlertView alloc] initWithTitle:@"Cannot Send Tweet" message:@"You cannot tweet from this device at this time. Please check your settings and try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease] show];
+            [tweetController setInitialText:[NSString stringWithFormat:@"I'll be eating lunch at %@ today, thanks to #EatFighterII!", name]];
         }
-    }];
+        tweetController.completionHandler = ^(SLComposeViewControllerResult result){
+            //  dismiss the Tweet Sheet
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [tweetController dismissViewControllerAnimated:NO completion:^{
+                    NSLog(@"Tweet Sheet has been dismissed.");
+                }];
+            });
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5 scene:[MainMenuScene node]]];
+        };
+        [((AppController *)[UIApplication sharedApplication].delegate).navController presentViewController:tweetController animated:YES completion:nil];
+    } else {
+        [[[[UIAlertView alloc] initWithTitle:@"Cannot Send Tweet" message:@"You cannot tweet from this device at this time. Please check your settings and try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease] show];
+    }
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
