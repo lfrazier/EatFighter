@@ -11,7 +11,7 @@ Write Review: Write reviews and give star ratings for restuarants. Remove a rest
 
 ##Notes
 ###General
-The app was written in 3 days. The concept behind it came from the idea that playing the game should somehow earn you the right to eat better and better lunches.
+The majority of the app was written in 3 days. The concept behind it came from the idea that playing the game should somehow earn you the right to eat better and better lunches.
 The "Write Reviews" screen incorporates keeping track of restaurants, writing reviews, rating restaurants (0-5 stars), and deleting a restaurant permanently.
 The restaurant list is stored on the phone. The restaurant reviews are displayed during the game, before each match. Finally, Twitter is incorporated after the player has won/lost the game.
 
@@ -38,4 +38,4 @@ The restaurant list is stored on the phone. The restaurant reviews are displayed
 * Background Music: Original Street Fighter games
 * Other Sound Effects: http://soundbible.com
 
-All game logic was written by me. Written between 4/26/13 and 4/29/13 for the Fueled iOS Test.
+All game logic was written by Lauren Frazier. Written between 4/26/13 and 4/29/13 for the Fueled iOS Test.
