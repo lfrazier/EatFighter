@@ -147,8 +147,9 @@ CGSize winSize;
     if ([review isEqual:@""]) {
         review = @"No Review";
     }
-    
+    #pragma mark Enemy AI
     [ModalAlert Tell:[NSString stringWithFormat:@"%@\n\n%@", [restaurant objectForKey:@"name"], review] onLayer:self option1:@"Fight!" okBlock:^{
+
         // Enemy AI
         // The more stars the restaurant has, the harder it is to beat
         int stars = [(NSNumber *)[restaurant objectForKey:@"stars"] integerValue];

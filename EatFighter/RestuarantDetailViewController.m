@@ -87,6 +87,10 @@
         [label setText:[NSString stringWithFormat:@"%d Stars", stars.intValue]];
     }
     [stepper setValue:stars.doubleValue];
+    NSString *review = [[((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:restaurantID] objectForKey:@"review"];
+    if (![review isEqualToString:@""]) {
+        [textField setText:review];
+    }
 }
 
 - (void)didReceiveMemoryWarning
