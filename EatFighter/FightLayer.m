@@ -160,7 +160,7 @@ CGSize winSize;
          */
         
         // Simple AI: Stars are proportional to punching speed.
-        float interval = 3 - (stars * 0.5);
+        float interval = 3 - (stars * 0.4);
         
         // Hardcoded AI: ...
         //float interval = 3;
