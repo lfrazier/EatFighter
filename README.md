@@ -15,6 +15,8 @@ The majority of the app was written in 3 days. The concept behind it came from t
 The "Write Reviews" screen incorporates keeping track of restaurants, writing reviews, rating restaurants (0-5 stars), and deleting a restaurant permanently.
 The restaurant list is stored on the phone. The restaurant reviews are displayed during the game, before each match. Finally, Twitter is incorporated after the player has won/lost the game.
 
+This game runs on iPhone 4, 4S, and 5; iOS 6.0+.
+
 ###Things I Am Particularly Proud Of
 * Idling, moving, and punching animations for protagonist/enemy
 * In order to differentiate your character from the enemy, I randomly assigned a tint to the enemy sprites.
