@@ -17,5 +17,6 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 @property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UIStepper *stepper;
 
 @end

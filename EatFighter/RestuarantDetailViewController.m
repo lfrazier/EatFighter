@@ -15,7 +15,7 @@
 
 @implementation RestuarantDetailViewController
 
-@synthesize textField, label;
+@synthesize textField, label,stepper;
 
 - (id)initWithRestaurantID:(int)restID {
     self = [super init];
@@ -86,6 +86,7 @@
     } else {
         [label setText:[NSString stringWithFormat:@"%d Stars", stars.intValue]];
     }
+    [stepper setValue:stars.doubleValue];
 }
 
 - (void)didReceiveMemoryWarning
