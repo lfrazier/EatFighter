@@ -128,7 +128,7 @@ CGSize winSize;
 
 - (void)setUpJoystickAndButtons {
     //Joystick
-    _joystick	= [ZJoystick joystickNormalSpriteFile:@"JoystickContainer_norm.png" selectedSpriteFile:@"JoystickContainer_trans.png" controllerSpriteFile:@"Joystick_norm.png"];
+    _joystick	= [ZJoystick joystickNormalSpriteFile:@"JoystickContainer_norm.png" selectedSpriteFile:@"JoystickContainer_norm.png" controllerSpriteFile:@"Joystick_norm.png"];
     _joystick.position	= ccp(_joystick.contentSize.width/2, _joystick.contentSize.height/2);
     _joystick.delegate	= self;				//Joystick Delegate
     _joystick.controlledObject  = ryu;     //we set our controlled object which the blue circle
