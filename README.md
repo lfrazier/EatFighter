@@ -28,7 +28,7 @@ The restaurant list is stored on the phone. The restaurant reviews are displayed
 * Use user's location to find restaurants, rather than hardcoding them in
 
 ##Acknowledgements
-* This app uses Cocos2d as the animation framework.
+* This app uses Cocos2d as the animation framework. (http://www.cocos2d-iphone.org)
 * Background Image: http://www.hitconfirm.com.br
 * Joystick Code: https://github.com/zaldzbugz/zJoystick
 * Ryu Sprite Images: http://panelmonkey.org
