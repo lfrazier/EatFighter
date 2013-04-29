@@ -299,6 +299,7 @@ CGSize winSize;
     UITouch* touch = [touches anyObject];
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     if (CGRectContainsPoint(button.boundingBox, touchLocation)) {
+        [button runAction:[CCTintTo actionWithDuration:0.01 red:200 green:200 blue:200]];
         [self ryuPunch];
         
     }
@@ -307,6 +308,7 @@ CGSize winSize;
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+    [button runAction:[CCTintTo actionWithDuration:0.01 red:255 green:255 blue:255]];
 }
 
 - (void)joystickControlBegan {
