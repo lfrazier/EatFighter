@@ -1,7 +1,7 @@
 Eat Fighter II
 ==========
 
-'Eat Fighter II' is a game that pits you against nearby restaurants. Square off against lower rated restaurants to get to the better rated ones. Fight your way to the top to get the best lunch!
+'Eat Fighter II' is an iPhone game that pits you against nearby restaurants. Square off against lower rated restaurants to get to the better rated ones. Fight your way to the top to get the best lunch!
 
 ##In-game instructions:
 New Game: Fight your way up through the ladder. If you want to eat at a restaurant, you must defeat it first. If you lose, you must eat lunch at the last restaurant that you defeated. If you beat them all, you win the game (and can eat at the best restaurant)!
@@ -26,6 +26,7 @@ The restaurant list is stored on the phone. The restaurant reviews are displayed
 * Better AI all around
 * Jump, Kick, and Combo attacks
 * Use user's location to find restaurants, rather than hardcoding them in
+* Make the game Universal/available on iPad, as well
 
 ##Acknowledgements
 * This app uses Cocos2d as the animation framework. (http://www.cocos2d-iphone.org)
