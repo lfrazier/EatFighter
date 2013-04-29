@@ -15,7 +15,7 @@
 
 @implementation FightLayer
 
-#define PUNCH_DAMAGE 25;
+#define PUNCH_DAMAGE 10;
 #define BUTTON_SOUND @"button-21.mp3"
 
 CGSize winSize;
@@ -158,8 +158,12 @@ CGSize winSize;
          float interval = 6 - (stars + randomOffset);
          */
         
-        // Simple AI: Stars are inversely, linearly proportional to punching speed.
-        float interval = 6 - stars;
+        // Simple AI: Stars are proportional to punching speed.
+        float interval = 3 - (stars * 0.5);
+        
+        // Hardcoded AI: ...
+        //float interval = 3;
+        
         [self schedule:@selector(enemyPunch) interval:interval repeat:-1 delay:2];
     }];
 }
@@ -241,7 +245,7 @@ CGSize winSize;
     } else {
         ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex++;
         NSDictionary *dict = [((AppController *)[UIApplication sharedApplication].delegate).restaurants objectAtIndex:((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex];
-        [ModalAlert Tell:@"You win... for now. The next challenger approaches!" onLayer:self option1:@"Next" okBlock:^{
+        [ModalAlert Tell:@"You win... for now.\n\nThe next challenger approaches! Are you ready?" onLayer:self option1:@"Next" okBlock:^{
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5 scene:[[FightScene alloc] initWithRestaurant:dict]]];
         }];
     }

@@ -31,7 +31,7 @@
 }
 
 - (void)newGame {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"button-21.mp3"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"sword.mp3"];
     ((AppController *)[UIApplication sharedApplication].delegate).currentRestaurantIndex = 0;
     NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"stars" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
@@ -49,11 +49,14 @@
 }
 
 - (void)writeReview {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"sword.mp3"];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[RestaurantViewController alloc] init]];
+    navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     [((AppController *)[UIApplication sharedApplication].delegate).navController presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)showInstructions {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"sword.mp3"];
     InstructionsViewController *instructions = [[InstructionsViewController alloc] init];
     [((AppController *)[UIApplication sharedApplication].delegate).navController presentViewController:instructions animated:YES completion:nil];
 }

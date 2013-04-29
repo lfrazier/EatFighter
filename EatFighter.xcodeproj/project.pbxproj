@@ -170,6 +170,7 @@
 		E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */; };
 		E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CC172DC707000AB1DF /* Woosh.mp3 */; };
 		E759D9CF172DD333000AB1DF /* button-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9CE172DD333000AB1DF /* button-21.mp3 */; };
+		E759D9D1172DDAA3000AB1DF /* sword.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E759D9D0172DDAA3000AB1DF /* sword.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -489,6 +490,7 @@
 		E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Strong_Punch.mp3; sourceTree = "<group>"; };
 		E759D9CC172DC707000AB1DF /* Woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woosh.mp3; sourceTree = "<group>"; };
 		E759D9CE172DD333000AB1DF /* button-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-21.mp3"; sourceTree = "<group>"; };
+		E759D9D0172DDAA3000AB1DF /* sword.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sword.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,9 +565,6 @@
 				E715EE6A172B6FC0007F4B67 /* ZJoystick.m */,
 				E759D9B0172C2153000AB1DF /* ModalAlert.h */,
 				E759D9B1172C2153000AB1DF /* ModalAlert.m */,
-				E715ECC8172B6A73007F4B67 /* Resources */,
-				E715ECE0172B6A73007F4B67 /* libs */,
-				E715EE51172B6A76007F4B67 /* Supporting Files */,
 				E715EE6B172B71B0007F4B67 /* Restaurant.h */,
 				E715EE6C172B71B0007F4B67 /* Restaurant.m */,
 				E759D9BD172CB092000AB1DF /* InstructionsViewController.h */,
@@ -576,6 +575,9 @@
 				E759D9C5172D6C2B000AB1DF /* RestuarantDetailViewController.h */,
 				E759D9C6172D6C2B000AB1DF /* RestuarantDetailViewController.m */,
 				E759D9C7172D6C2B000AB1DF /* RestuarantDetailViewController.xib */,
+				E715ECC8172B6A73007F4B67 /* Resources */,
+				E715ECE0172B6A73007F4B67 /* libs */,
+				E715EE51172B6A76007F4B67 /* Supporting Files */,
 			);
 			path = EatFighter;
 			sourceTree = "<group>";
@@ -583,6 +585,7 @@
 		E715ECC8172B6A73007F4B67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E759D9D0172DDAA3000AB1DF /* sword.mp3 */,
 				E759D9CE172DD333000AB1DF /* button-21.mp3 */,
 				E759D9CC172DC707000AB1DF /* Woosh.mp3 */,
 				E759D9CA172DC405000AB1DF /* Strong_Punch.mp3 */,
@@ -1064,6 +1067,7 @@
 				E759D9CB172DC405000AB1DF /* Strong_Punch.mp3 in Resources */,
 				E759D9CD172DC707000AB1DF /* Woosh.mp3 in Resources */,
 				E759D9CF172DD333000AB1DF /* button-21.mp3 in Resources */,
+				E759D9D1172DDAA3000AB1DF /* sword.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

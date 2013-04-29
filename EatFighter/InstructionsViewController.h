@@ -10,6 +10,9 @@
 
 @interface InstructionsViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+
 - (IBAction)close:(id)sender;
 
 @end
